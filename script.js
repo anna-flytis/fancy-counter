@@ -8,21 +8,31 @@ resetButtonEl.addEventListener('click', function(){
   counterValueEl.textContent = 0;
 })
 
+function incrementCounter() {
+  const currentValue = counterValueEl.textContent;
+
+  const currentValueAsNumber =+currentValue;
+  let newValue = currentValueAsNumber + 1;
+      
+  if (newValue >= 5 ){
+    newValue = 5;
+    
+  } 
+  counterValueEl.textContent = newValue;
+}
+
+
+
 decreaseButtonEl.addEventListener('click', function() {
   const currentValue = counterValueEl.textContent;
   const currentValueAsNumber =+currentValue;
-  const newValue = currentValueAsNumber - 1;
+  let newValue = currentValueAsNumber - 1;
+  if (newValue < 0){
+    newValue = 0;
+  }
   counterValueEl.textContent = newValue;
 })
 
-increaseButtonEl.addEventListener('click', function(){
-  const currentValue = counterValueEl.textContent;
+increaseButtonEl.addEventListener('click', incrementCounter);
+document.addEventListener('keydown', incrementCounter);
 
-  const currentValueAsNumber =+currentValue;
-  if (currentValue >= 5 ){
-
-  } else {
-      const newValue = currentValueAsNumber + 1;
-      counterValueEl.textContent = newValue;
-  }
-})
