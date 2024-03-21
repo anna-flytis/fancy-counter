@@ -12,7 +12,7 @@ resetButtonEl.addEventListener('click', () => {
   increaseButtonEl.disabled = false;
   decreaseButtonEl.disabled = false;
   resetButtonEl.blur();
-});
+})
 
 const incrementCounter = () =>{
   const currentValue = counterValueEl.textContent;
@@ -29,10 +29,7 @@ const incrementCounter = () =>{
   } 
   counterValueEl.textContent = newValue;
   resetButtonEl.blur();
-
 }
-
-
 
 decreaseButtonEl.addEventListener('click', () => {
   const currentValue = counterValueEl.textContent;
@@ -43,7 +40,6 @@ decreaseButtonEl.addEventListener('click', () => {
   }
   counterValueEl.textContent = newValue;
     resetButtonEl.blur();
-
 })
 
 increaseButtonEl.addEventListener('click', incrementCounter);
